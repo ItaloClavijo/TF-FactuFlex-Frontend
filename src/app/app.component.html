@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" *ngIf="verificar()">
+  <button mat-button [routerLink]="['/homes']">
+    <mat-icon>home</mat-icon>Home
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuGreenarea" *ngIf="isGerente()">
+    <mat-icon>location_city</mat-icon>
+    Área Verde
+  </button>
+  <button mat-button [matMenuTriggerFor]="menuMaintenance" *ngIf="isOperario()">
+    <mat-icon>style</mat-icon>
+    Mantenimientos
+  </button>
+  <button mat-button [matMenuTriggerFor]="menuReport">
+    <mat-icon>file_copy</mat-icon>
+     Reportes
+  </button>
+  <button mat-button [matMenuTriggerFor]="menuSalir">
+    <mat-icon>person</mat-icon> Usuario
+  </button>
+</mat-toolbar>
+
+<mat-menu #menuGreenarea="matMenu">
+  <button mat-menu-item routerLink="/areas/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/areas">Listar</button>
+
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+<mat-menu #menuMaintenance="matMenu">
+  <button mat-menu-item routerLink="/mantenimientos/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/mantenimientos">Listar</button>
+
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+<mat-menu #menuReport="matMenu">
+  <button mat-menu-item routerLink="/reportes">Cantidad de mantenimientos por área verde</button>
+  <button mat-menu-item routerLink="/reportes/reporte02">Dinero invertido en área verd          e</button>
+
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+  <button mat-menu-item>
+    Rol:
+    <span>{{ role }}</span>
+  </button>
+</mat-menu>
+<router-outlet></router-outlet>

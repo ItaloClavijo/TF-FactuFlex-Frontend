@@ -1,0 +1,23 @@
+<div class="container" style="text-align: center">
+  <div>
+    <br>
+    <img src="https://cdn.discordapp.com/attachments/950315037719920701/1277883455702564946/FactuFlexLogo.png?ex=66cec935&is=66cd77b5&hm=09fd457124378314d3e6013b26f0947de41cd753b35325e19910fbab9c3c6600&" alt="Logo de la empresa" width="150" height="150"/>
+  </div>
+  <h2>Inicie sesión</h2>
+  <mat-form-field class="example-full-width">
+    <mat-label>Usuario</mat-label>
+    <input matInput placeholder="Username" [(ngModel)]="username" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      placeholder="Password"
+      [(ngModel)]="password"
+    />
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
+</div>
